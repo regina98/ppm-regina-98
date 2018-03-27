@@ -1,0 +1,465 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel=stylesheet href=jquery.mobile-1.4.5.css />
+	<script src=demos/js/jquery.js></script>
+	<script src=demos/js/jquery.mobile-1.4.5.js></script>
+	<script type="text/javascript">
+		$( document ).on( "click", ".show-page-loading-msg", function() {
+		    var $this = $( this ),
+		        theme = $this.jqmData( "theme" ) || $.mobile.loader.prototype.options.theme,
+		        msgText = $this.jqmData( "msgtext" ) || $.mobile.loader.prototype.options.text,
+		        textVisible = $this.jqmData( "textvisible" ) || $.mobile.loader.prototype.options.textVisible,
+		        textonly = !!$this.jqmData( "textonly" );
+		        html = $this.jqmData( "html" ) || "";
+		    $.mobile.loading( "show", {
+		            text: msgText,
+		            textVisible: textVisible,
+		            theme: theme,
+		            textonly: textonly,
+		            html: html
+		    });
+		})
+		.on( "click", ".hide-page-loading-msg", function() {
+		    $.mobile.loading( "hide" );
+		});
+	</script>
+	<script type="text/javascript">
+		function nav1() {
+			var selObj = document.getElementById("combo1");
+		   	valor = selObj.options[selObj.selectedIndex].value;
+			window.location = 'test.html' + valor;
+			location.reload();
+		}
+		function nav2() {
+		    var selObj = document.getElementById("combo2");
+		    valor = selObj.options[selObj.selectedIndex].value;
+		    window.location = 'test.html' + valor;
+			location.reload();
+		}
+		function nav3() {
+		    var selObj = document.getElementById("combo3");
+		    valor = selObj.options[selObj.selectedIndex].value;
+		    window.location = 'test.html' + valor;
+			location.reload();
+		}
+
+		function calculator() {
+			var n = document.getElementById("angka").value;
+			var p = document.getElementById("pangkat").value;
+			if ((/[^0-9]/g.test(n)) || n == "") {
+				alert ("Cek angka yang diinputkan lagi ");
+				document.getElementById("angka").value = "";
+				document.getElementById("angka").focus();
+				return false;
+			}
+			if ((/[^0-9]/g.test(p)) || p == "") {
+				alert ("Cek pangkat yang diinputkan lagi");
+				document.getElementById("pangkat").value = "";
+				document.getElementById("pangkat").focus();
+				return false;
+			}
+			n = parseInt(n);
+			p = parseInt(p);
+			var ha = Math.pow(n,p)
+
+			var hasil = "Hasil Pangkat : " + ha + "<br>";
+
+			document.getElementById("result").innerHTML=hasil;
+		}
+
+		function hitung()
+		{
+			var f = document.getElementById("fak").value;
+			if ((/[^0-9]/g.test(f)) || f == "") {
+				alert ("Cek angka faktorial yang diinputkan lagi");
+				document.getElementById("fak").value = "";
+				document.getElementById("fak").focus();
+				return false;
+			}
+			var fakk = 1;
+		    if (f == "0")
+		    fakk=1;
+		    for(var x=1;x<=f;x++)
+		        {
+		            fakk = fakk * x;
+		      	}
+		    var hasil = "Hasil Faktorialnya : " + fakk +"<br>";
+		    document.getElementById("fakresult").innerHTML=hasil;
+		}
+
+		function ubah_warna() {
+		    var inputVal = document.getElementById("warna");
+		    if (inputVal.value == "") {
+				alert ("Cek input warna");
+		    }
+		    else{
+		        document.getElementById("hwarna").style.backgroundColor = inputVal;
+		    }
+		}
+	</script>
+	<style type="text/css">
+		/* cyrillic-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OX-hpOqc.woff2) format('woff2');
+		  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+		/* cyrillic */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OVuhpOqc.woff2) format('woff2');
+		  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+		/* greek-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXuhpOqc.woff2) format('woff2');
+		  unicode-range: U+1F00-1FFF;
+		}
+		/* greek */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUehpOqc.woff2) format('woff2');
+		  unicode-range: U+0370-03FF;
+		}
+		/* vietnamese */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXehpOqc.woff2) format('woff2');
+		  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+		}
+		/* latin-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OXOhpOqc.woff2) format('woff2');
+		  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 300;
+		  src: local('Open Sans Light'), local('OpenSans-Light'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN_r8OUuhp.woff2) format('woff2');
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		/* cyrillic-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWJ0bbck.woff2) format('woff2');
+		  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+		/* cyrillic */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFUZ0bbck.woff2) format('woff2');
+		  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+		/* greek-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWZ0bbck.woff2) format('woff2');
+		  unicode-range: U+1F00-1FFF;
+		}
+		/* greek */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVp0bbck.woff2) format('woff2');
+		  unicode-range: U+0370-03FF;
+		}
+		/* vietnamese */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFWp0bbck.woff2) format('woff2');
+		  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+		}
+		/* latin-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFW50bbck.woff2) format('woff2');
+		  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 400;
+		  src: local('Open Sans Regular'), local('OpenSans-Regular'), url(http://fonts.gstatic.com/s/opensans/v15/mem8YaGs126MiZpBA-UFVZ0b.woff2) format('woff2');
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+		/* cyrillic-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOX-hpOqc.woff2) format('woff2');
+		  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+		}
+		/* cyrillic */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOVuhpOqc.woff2) format('woff2');
+		  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+		}
+		/* greek-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXuhpOqc.woff2) format('woff2');
+		  unicode-range: U+1F00-1FFF;
+		}
+		/* greek */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUehpOqc.woff2) format('woff2');
+		  unicode-range: U+0370-03FF;
+		}
+		/* vietnamese */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXehpOqc.woff2) format('woff2');
+		  unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+		}
+		/* latin-ext */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOXOhpOqc.woff2) format('woff2');
+		  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+		}
+		/* latin */
+		@font-face {
+		  font-family: 'Open Sans';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(http://fonts.gstatic.com/s/opensans/v15/mem5YaGs126MiZpBA-UN7rgOUuhp.woff2) format('woff2');
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+	</style>
+</head>
+<body>
+<div data-role=page data-theme=b>
+		<div data-role=header id=win1 >
+			<h1> Test 1 PPM </h1>
+			<form>
+			<div class="ui-field-contain">
+			    <label for="select-native-17">Select page : </label>
+			    <select name="select-native-17" id="combo3" onchange="nav1()" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Waiting for the page" data-inline="true">
+			        <option value="#win1" selected="selected">Page 1</option>
+			        <option value="#win2">Page 2</option>
+			        <option value="#win3" >Page 3</option>
+			    </select>
+				<p id ="aaa"></p>
+			</div>
+			</form>
+		</div>
+		<div data-role=content>
+			<p> Input angka: </p>
+			<input type="text" name="angka" id="angka" />
+			<br>
+			<p> Pangkat : </p>
+			<input type="text" name="pangkat" id="pangkat" />
+			<button class="ui-btn ui-corner-all" onclick="calculator()">Convert</button>
+			<br>
+
+			<div id="result"></div>
+			
+			<p> Cari faktorial dari : </p>
+			<input type="text" name="fak" id="fak" />
+			<button class="ui-btn ui-corner-all" onclick="hitung()">Convert</button>
+			<br>
+			<div id="fakresult"></div>
+		</div>
+	</div>
+
+	<div data-role=page data-theme=b>
+		<div data-role=header id=win2 >
+
+			<h1> Test 1 PPM </h1>
+			<form>
+			<div class="ui-field-contain">
+			    <label for="select-native-17">Select page : </label>
+			    <select name="select-native-17" id="combo3" onchange="nav2()" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Waiting for the page" data-inline="true">
+			        <option value="#win1" selected="selected">Page 1</option>
+			        <option value="#win2">Page 2</option>
+			        <option value="#win3" >Page 3</option>
+			    </select>
+			</div>
+			</form>
+		</div>
+
+		<div data-role=content>
+			<p>page 2</p>
+			<p> Input RGB code : </p>
+			<input type="text" name="warna" id="warna" >
+			<p>Hasil : </p>
+			<input type="text" name="hwarna" id="hwarna" >
+			<button class="ui-btn ui-corner-all" onclick="ubah_warna()">Show</button><br>
+		</div>
+	</div>
+	<div data-role=page data-theme=b>
+		<div data-role=header id=win3 >
+
+			<h1> Test 1 PPM </h1>
+			<form>
+			<div class="ui-field-contain">
+			    <label for="select-native-17">Select page : </label>
+			    <select name="select-native-17" id="combo3" onchange="nav3()" class="show-page-loading-msg" data-theme="b" data-textonly="false" data-textvisible="true" data-msgtext="Waiting for the page" data-inline="true">
+
+			        <option value="#win1" selected="selected">Page 1</option>
+			        <option value="#win2">Page 2</option>
+			        <option value="#win3" >Page 3</option>
+			    </select>
+			</div>
+			</form>
+		</div>
+		<div data-role=content>
+		<h3>Rangkuman Github</h3>
+		<div class="ui-grid-b ui-responsive">
+		    <div class="ui-block-a">
+				<div class="ui-body ui-body-d">
+					<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">GITHUB</a>
+					<div data-role="popup" id="popupBasic">
+					<p>
+					GitHub adalah layanan penginangan web bersama untuk proyek pengembangan perangkat lunak yang menggunakan sistem pengontrol versi Git dan layanan hosting internet. Hal ini banyak digunakan untuk kode komputer. Ini memberikan kontrol akses dan beberapa fitur kolaborasi seperti pelacakan bug, permintaan fitur, manajemen tugas, dan wiki untuk setiap proyek.
+					</p>
+					</div>
+					<h1>Hal penting dalam Github</h1>
+					<p>
+						<br>1. git init -> untuk menginisialisasi penyimpanan Git yang kosong di /.git/
+						<br>2. git status -> utk cek isi folder (kalau merah brrti ada file yang blm di add)
+						<br>3. git add blabla.txt -> menambahkan file text ke staging area, bisa di ubah
+						<br>4. git commit -m " " -> -m itu message, kalau sudah commit tdk bisa d ganti. kalau mau ganti di add lagi dan ke replace. "" keterangan di Github
+						5. git add ' ' -> menambahkan semua file txt
+						<br>6. git log -> melihat apa saja yang sudah di commmit
+						<br>7. git remote -u origin https://bla.com/ -> memasukkan apa saja yg di lokal ke server
+						<br>8. push -> 1 file dimasukkan ke github
+						<br>9. origin -> 1 folder dimasukkan ke github
+						<br>10. -u -> digunakan Git untuk mengingat parameter, jadi saat akan menjalankan git push, git tau apa yg hrs dilakukan
+						<br>11. git pull origin master -> menyamakan apa yang sdah ditambahkan ke server oleh orang lain sehingga file di local sama dengan file di server
+						<br>12. diff -> utk melihat perbedaan dari commit yg lalu
+						<br>13. git diff head -> utk memeriksa perbedaan di commit yang paling baru
+						<br>14. git diff --staged -> utk cek posisi file yang barusan di ubah
+						<br>15. git reset -> utk mengunstage file di stage
+						<br>16. git checkout -- octocat.txt -> utk mengembalikan perubahan seperti commit terakhir
+						<br>17. branch -> copy-an dr code yg kemudian digabungkan ke master branch.
+						<br>18. git branch clean_up -> membuat branch bernama clean_up
+						<br>19. git checkout nama -> utk switch branches
+						<br>20. git rm '*.txt' -> remove semua file txt sepenuhnya
+						<br>21. git commit -m "Remove all the cats" -> utk commit kalau sdh hapus file
+						<br>22. git checkout master -> utk kembali ke master branch
+						<br>23. git merge clean_up -> menggabungkan perubahan dari clean_up branch ke master branch
+						<br>24. git branch -d (branch_name) -> utk menghapus branch
+						<br>25. git push -> push semua yang sudah dikerjakan ke remote repository
+					</p>
+				</div>
+			</div>
+		    <div class="ui-block-b">
+				<div class="ui-body ui-body-d">
+					<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">JQuery Mobile</a>
+					<div data-role="popup" id="popupBasic">
+					<p>jQuery Mobile framework takes the "write less, do more" mantra to the next level: Instead of writing unique applications for each mobile device or OS, the jQuery mobile framework allows you to design a single highly-branded responsive web site or application that will work on all popular smartphone, tablet, and desktop platforms.</p>
+					</div>
+					<h1>Hal penting dalam Jquery Mobile</h1>
+					<p>
+					<br>1. Sistem yang mencatat setiap perubahan terhadap suatu file jadi bisa kembali ke salah satu versi dari file tersebut
+					<br>2. version control system lokal -> bisa mengelola revisi dari banyak file,perubahan hanya pada data lokal (contoh: RCS)
+					version control system terpusat -> apabila ada perubahan, yang ada di server juga ikut berubah
+					version control system terdistribusi -> apabila ada perubahan di lokal harus di commit terlebih dahulu agar terjadi perubahan di server 
+					<br>3. download git, membuat akun + repository, buka git bash.
+					<br>4. Commited -> data tersimpan pada lokal
+					Modified -> sudah melakukan perubahan pada berkas tapi belum melakukan commit
+					Staged -> sudah menandai berkas yang telah diubah pada versi yang sedang berlangsung yang kemudian dilakukan commit
+					<br>5. git status -> utk mengetahui status dari repository lokal
+					git init -> utk membuat repository pada file lokal yang nantinya ada folder.git
+					git add -> menambahkan file baru pada repository yang dipilih
+					git commmit -> menyimpan perubahan yang sudah dilakukan
+					git push -> mengirimkan perubahan file setelah di commit ke remote repository
+					</p>
+				</div>
+			</div>
+		    <div class="ui-block-c">
+				<div class="ui-body ui-body-d">
+					<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Angular JS</a>
+					<div data-role="popup" id="popupBasic">
+					<p>Angular JS merupakan framework javascript open souce yang dirilis oleh google pada tahun 2009. Konsep dari Angular JS adalah meningkatkan fungsi dari HTML untuk membangun web app. Bayangkan awalnya HTML hanya digunakan untuk membuat halaman website statis dan kini bisa berfungsi untuk membuat web app dengan menggunakan Angular JS.</p>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+		<div>
+			<h1>Penilaian : </h1>
+			<form>
+			    <label for="slider-3">Slider:</label>
+			    <input type="range" name="slider-3" id="slider-3" data-track-theme="b" data-theme="b" min="0" max="100" value="50">
+			</form>
+		</div>
+		<div>
+			<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
+		     <thead>
+		       <tr>
+		         <th data-priority="1">No</th>
+		         <th data-priority="2">Materi</th>
+		         <th data-priority="3">Tingkat Pemahaman</th>
+		       </tr>
+		     </thead>
+		     <tbody>
+		       <tr>
+		         <th>1</th>
+				<td>Github</td>
+		         <td>95%</td>
+		       </tr>
+		       <tr>
+		         <th>2</th>
+				<td>JQuery Mobile</td>
+		         <td>97%</td>
+		       </tr>
+		       <tr>
+		         <th>3</th>
+				<td>Angular JS</td>
+		         <td>98%</td>
+		       </tr>
+		       <tr>
+		         
+		     </tbody>
+		   </table>
+		</div>
+	</div>
+	
+
+</body>
+</html>
