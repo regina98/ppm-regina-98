@@ -1,0 +1,114 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel=stylesheet href=jquery.mobile-1.4.5.css />
+	<script src=demos/js/jquery.js></script>
+	<script src=demos/js/jquery.mobile-1.4.5.js></script>
+</head>
+<body>
+	<div data-role=page id=win1 data-theme=b>
+		<div data-role=header>
+		<h1>Perkenalan</h1>
+		</div>
+		<div data-role=content>
+			<h1 align=center> Regina Valentina</h1>
+			<p> Hai hai hai... :)) Halo kenalin aku Regina. Dengan status pelajar di Universitas Kristen Petra Surabaya. Lebih tepatnya, sekarang aku sedang menempuh semester keempat dari jurusan Teknik Informatika. Mau tahu lebih lanjut? yuk ke halaman selanjutnya <3</p>
+			<button><a href=#win2> Next Page</a></button>
+		</div>
+	</div>
+	<div data-role=page id=win2 data-theme=b>
+		<div data-role=header data-add-back-btn="true">
+		<h1>Window 2</h1> 
+		</div>
+		<div data-role=content>
+			<h1>Haiii :)</h1>
+			<p>Jadi di sini aku mau kasih tahu kalian tentang aku lebih banyak lagi :D Kalau masih mau tahu lagi, langsung aja ke halaman berikutnya</p>
+			<div data-role="tabs" id="tabs">
+			  <div data-role="navbar">
+			    <ul>
+			      <li><a href="#one" data-ajax="false">Riwayat Sekolah</a></li>
+			      <li><a href="#two" data-ajax="false">Makanan Enak Menurutku</a></li>
+			    </ul>
+			  </div>
+			  <div id="one" class="ui-body-d ui-content">
+			    <ul data-role="listview" data-inset="true">
+				    <li><p>TK: TK Santo Yusup Kediri</p></li>
+				    <li><p>SD: SD Kristen Petra Kediri</p></li>
+				    <li><p>SMP: SMP Santa Maria Kediri</p></li>
+				    <li><p>SMA: SMA Kolese Santo Yusup Malang</p></li>
+				    <li><p>Sekarang : Universitas Kristen Petra Surabaya</p></li>
+				</ul>
+			  </div>
+			  <div id="two">
+			<p>Gimana? makanan kesukaan kita ada yang beda? swipe aja buat delete</p>
+			    <ul data-role="listview" data-inset="true">
+				<div data-role="header" data-position="fixed" data-theme="b">
+			        <h1>Inbox</h1>
+			        <a href="#demo-intro" data-rel="back" data-icon="carat-l" data-iconpos="notext">Back</a>
+			        <a href="#" onclick="window.location.reload()" data-icon="back" data-iconpos="notext">Refresh</a>
+			    </div>
+			    <div role="main" class="ui-content">
+			        <ul id="list" class="touch" data-role="listview" data-icon="false" data-split-icon="delete">
+			            <li>
+			                <a href="#demo-mail">
+			                    <h3>Nasi Goreng</h3>
+			                </a>
+			                <a href="#" class="delete">Delete</a>
+			            </li>
+			            <li>
+			                <a href="#demo-mail">
+			                    <h3>Martabak</h3>
+			                </a>
+			                <a href="#" class="delete">Delete</a>
+			            </li>
+			            <li>
+			                <a href="#demo-mail">
+			                    <h3>Terang Bulan</h3>
+			                </a>
+			                <a href="#" class="delete">Delete</a>
+			            </li>
+			        </ul>
+		        </div>
+			    </ul>
+			  </div>
+			</div>
+			<button><a href=#win3> Next Page</a></button>
+		</div>
+	</div>
+	<div data-role=page id=win3 data-theme=b>
+		<div data-role=header data-add-back-btn="true">
+		<h1>Data </h1>
+		</div>
+		<div data-role=content>
+			<p>Apa yang belum kalian tahu lagi? Coba cari informasinya dibawah ini</p>
+				<a href=#popup1 data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Nama Lengkap</a>
+				<div data-role="popup" id="popup1">
+				<p>Regina Valentina</p>
+				</div>
+
+				<a href="#popup2" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Tanggal Lahir</a>
+				<div data-role="popup" id="popup2">
+				<p>1 April 1998</p>
+				</div>
+
+				<a href="#popup3" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Mama & Papa</a>
+				<div data-role="popup" id="popup3">
+				<p>Rahasia dong :P</p>
+				</div>
+			<button><a href=#win4> Next Page</a></button>
+		</div>
+	</div>
+	<div data-role=page id=win4 data-theme=b>
+		<div data-role=header data-add-back-btn="true">
+		<h1>Udah Halaman Terakhir :(</h1>
+		</div>
+		<div data-role=content>
+			<p> Nah kawann... Setelah kalian baca tadi.. </p>
+			<form>
+			    <label for="slider-2">Seberapa banyak kalian mengerti aku?</label>
+			    <input type="range" name="slider-2" id="slider-2" data-highlight="true" min="0" max="100" value="50">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
